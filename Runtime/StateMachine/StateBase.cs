@@ -25,6 +25,6 @@ namespace Farmand.StateMachine
 
         public abstract void OnExitState();
         public abstract void OnEnterState();
-        public abstract void OnStateUpdate(float stateTime);
+        public abstract void OnStateUpdate();
     }
 }

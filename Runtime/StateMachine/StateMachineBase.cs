@@ -66,7 +66,7 @@ namespace Farmand.StateMachine
         {
             if (_currentState == null) return;
             _stateTime += Time.unscaledDeltaTime;
-            _currentState.OnStateUpdate(_stateTime);
+            _currentState.OnStateUpdate();
         }
 
 
