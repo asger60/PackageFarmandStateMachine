@@ -32,6 +32,7 @@ namespace Farmand.StateMachine
 
         public void ChangeState<T>() where T : StateBase
         {
+            print("#StateMachine#changing state to: " + typeof(T));
             foreach (var state in _states)
             {
                 if (state is T)
