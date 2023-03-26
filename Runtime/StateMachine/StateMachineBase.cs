@@ -5,9 +5,9 @@ using UnityEngine;
 
 namespace Farmand.StateMachine
 {
-    public class StateMachineBase : MonoBehaviour
+    public sealed class StateMachineBase : MonoBehaviour
     {
-        public List<StateBase> _states = new List<StateBase>();
+        readonly List<StateBase> _states = new List<StateBase>();
         private StateBase _currentState;
         private StateBase _prevState;
         public StateBase PreviousState => _prevState;
@@ -15,7 +15,7 @@ namespace Farmand.StateMachine
         private float _stateTime;
         public Action<StateBase> onStateEnter;
 
-        public virtual void Awake()
+        public void Awake()
         {
             foreach (var stateBase in GetComponentsInChildren<StateBase>(true))
             {
@@ -43,7 +43,7 @@ namespace Farmand.StateMachine
             }
         }
 
-        protected virtual void ChangeState(StateBase state)
+        private void ChangeState(StateBase state)
         {
             if (state == _currentState)
             {
@@ -66,7 +66,7 @@ namespace Farmand.StateMachine
 
         }
 
-        public virtual void Update()
+        public void Update()
         {
             if (_currentState == null) return;
             _stateTime += Time.unscaledDeltaTime;
