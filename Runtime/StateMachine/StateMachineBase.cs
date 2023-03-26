@@ -27,7 +27,6 @@ namespace Farmand.StateMachine
 
         private void AddState(StateBase state)
         {
-            print("#StateMachine#adding state: " + state);
             _states.Add(state);
         }
 
@@ -36,7 +35,6 @@ namespace Farmand.StateMachine
             print("#StateMachine#changing state to: " + typeof(T) +  " " + _states.Count);
             foreach (var state in _states)
             {
-                print("#StateMachine#testing: " + state);
                 if (state is T)
                 {
                     ChangeState(state);
@@ -66,7 +64,6 @@ namespace Farmand.StateMachine
             onStateEnter?.Invoke(_currentState);
             _stateTime = 0;
 
-            print("#StateMachineBase#change state " + state.GetType());
         }
 
         public virtual void Update()
