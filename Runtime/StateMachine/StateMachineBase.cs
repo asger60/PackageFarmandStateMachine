@@ -15,7 +15,7 @@ namespace Farmand.StateMachine
         private float _stateTime;
         public Action<StateBase> onStateEnter;
 
-        public void Awake()
+        public virtual void Awake()
         {
             foreach (var stateBase in GetComponentsInChildren<StateBase>(true))
             {
@@ -43,7 +43,7 @@ namespace Farmand.StateMachine
             }
         }
 
-        private void ChangeState(StateBase state)
+        protected virtual void ChangeState(StateBase state)
         {
             if (state == _currentState)
             {
@@ -66,7 +66,7 @@ namespace Farmand.StateMachine
 
         }
 
-        public void Update()
+        public virtual void Update()
         {
             if (_currentState == null) return;
             _stateTime += Time.unscaledDeltaTime;
