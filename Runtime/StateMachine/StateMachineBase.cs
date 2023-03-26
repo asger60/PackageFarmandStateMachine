@@ -35,6 +35,7 @@ namespace Farmand.StateMachine
             print("#StateMachine#changing state to: " + typeof(T));
             foreach (var state in _states)
             {
+                print("#StateMachine#testing: " + state);
                 if (state is T)
                 {
                     ChangeState(state);
@@ -48,7 +49,6 @@ namespace Farmand.StateMachine
             if (state == _currentState)
             {
                 print("#StateMachineBase#state change ignored, already in that state");
-
                 return;
             }
             _prevState = _currentState;
