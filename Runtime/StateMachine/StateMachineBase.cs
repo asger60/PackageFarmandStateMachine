@@ -7,7 +7,7 @@ namespace Farmand.StateMachine
 {
     public class StateMachineBase : MonoBehaviour
     {
-        readonly List<StateBase> _states = new List<StateBase>();
+        public List<StateBase> _states = new List<StateBase>();
         private StateBase _currentState;
         private StateBase _prevState;
         public StateBase PreviousState => _prevState;
@@ -27,6 +27,7 @@ namespace Farmand.StateMachine
 
         private void AddState(StateBase state)
         {
+            print("#StateMachine#adding state: " + state);
             _states.Add(state);
         }
 
