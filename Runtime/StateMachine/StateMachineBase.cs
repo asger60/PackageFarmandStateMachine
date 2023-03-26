@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Farmand.StateMachine
 {
-    public sealed class StateMachineBase : MonoBehaviour
+    public class StateMachineBase : MonoBehaviour
     {
         readonly List<StateBase> _states = new List<StateBase>();
         private StateBase _currentState;
