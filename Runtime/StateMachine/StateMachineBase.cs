@@ -45,7 +45,12 @@ namespace Farmand.StateMachine
 
         protected virtual void ChangeState(StateBase state)
         {
-            if (state == _currentState) return;
+            if (state == _currentState)
+            {
+                print("#StateMachineBase#state change ignored, already in that state");
+
+                return;
+            }
             _prevState = _currentState;
             _currentState = state;
             
