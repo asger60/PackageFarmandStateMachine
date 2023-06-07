@@ -12,16 +12,13 @@ namespace Farmand.StateMachine
         public void Init(StateMachineBase stateMachineBase)
         {
             _stateMachineBase = stateMachineBase;
+            OnAdd();
         }
-        public void OnAdd()
+        public virtual void OnAdd()
         {
-            Start();
         }
 
-        public virtual void Start()
-        {
-        
-        }
+
 
         public abstract void OnExitState();
         public abstract void OnEnterState();
