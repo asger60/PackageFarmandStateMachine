@@ -1,4 +1,4 @@
-# Screengrabber
+# StateMachine
 
-An editor window for batch capturing screenshots in various formats
+A finite statemachine for Unity. I use it all the time..
 <br>

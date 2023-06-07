@@ -1,5 +1,5 @@
 {
-    "name": "floppyclub.ticker",
+    "name": "floppyclub.statemachine",
     "rootNamespace": "",
     "references": [],
     "includePlatforms": [],
