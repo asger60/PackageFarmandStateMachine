@@ -25,6 +25,18 @@ namespace Farmand.StateMachine
             }
         }
 
+        protected virtual IEnumerator Start()
+        {
+            foreach (var stateBase in GetComponentsInChildren<StateBase>(true))
+            {
+                AddState(stateBase);
+                stateBase.Init(this);
+                stateBase.gameObject.SetActive(false);
+            }
+
+            yield break;
+        }
+
         private void AddState(StateBase state)
         {
             _states.Add(state);
